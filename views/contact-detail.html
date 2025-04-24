@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>PhoneBook | Contact Detail</title>
+    <style>
+        #contact-detail-body>div:first-child {
+            margin-bottom: 15px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        #contact-detail-body>div:last-child {
+            display: flex;
+            justify-content: right;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        @media screen and (max-width:640px) {
+            #contact-detail-body>div:first-child {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/">
+            <h1>PhoneBook</h1>
+        </a>
+        <div>
+            <a href="/contacts">Contacts</a>
+            <a href="/contact-form">Add Contact</a>
+            <a href="/contact-logs">Logs</a>
+        </div>
+    </nav>
+    <main>
+        <h2 class="header">
+            Contact Detail
+        </h2>
+        <section id="contact-detail-body">
+        </section>
+    </main>
+    <footer>
+    </footer>
+    <script src="/js/script.js"></script>
+    <script>
+        const contactId = window.location.pathname.split('/')[2];
+        app.getContact(contactId)
+    </script>
+</body>
+
+</html>

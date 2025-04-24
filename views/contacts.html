@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>PhoneBook | Contacts</title>
+    <style>
+        #contacts {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+
+            a {
+                display: block;
+                text-decoration: none;
+                min-width: 150px;
+                flex-shrink: 1;
+                flex-grow: 1;
+                background-color: rgb(235, 234, 234);
+                border-radius: 5px;
+                padding: 15px;
+                transition: all 0.1s ease-in-out;
+                cursor: pointer;
+
+                p {
+                    margin: 0;
+                }
+            }
+
+            a:hover {
+                background-color: rgb(227, 224, 224);
+            }
+
+            a>p:first-child {
+                color: rgb(90, 88, 88);
+                font-size: 15px;
+            }
+
+            a>p:last-child {
+                font-size: 18px;
+                margin-top: 5px;
+                color: rgb(44, 43, 43);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/">
+            <h1>PhoneBook</h1>
+        </a>
+        <div>
+            <a href="/contacts">Contacts</a>
+            <a href="/contact-form">Add Contact</a>
+            <a href="/contact-logs">Logs</a>
+        </div>
+    </nav>
+    <main>
+        <h2 class="header">
+            Contacts
+        </h2>
+        <section id="contacts-page-body">
+
+        </section>
+    </main>
+    <footer>
+    </footer>
+    <script src="/js/script.js"></script>
+    <script>
+        app.getContacts();
+    </script>
+</body>
+
+</html>

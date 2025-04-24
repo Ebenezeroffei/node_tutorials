@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>PhoneBook | Contact Form</title>
+    <style>
+        form>section {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/">
+            <h1>PhoneBook</h1>
+        </a>
+        <div>
+            <a href="/contacts">Contacts</a>
+            <a href="/contact-form">Add Contact</a>
+            <a href="/contact-logs">Logs</a>
+        </div>
+    </nav>
+    <main>
+        <h2 class="header">
+            Contact Form
+        </h2>
+        <section>
+            <form method="post" id="contact-form">
+                <section class="form-body">
+                    <div class="form-input">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName">
+                    </div>
+                    <div class="form-input">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName">
+                    </div>
+                    <div class="form-input">
+                        <label for="contact">Contact</label>
+                        <input type="text" id="contact" name="contact">
+                    </div>
+                    <div class="form-input">
+                        <label for="birthday">Birthday</label>
+                        <input type="date" id="birthday" name="birthday">
+                    </div>
+                </section>
+                <div class="form-input">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="description" rows="5"></textarea>
+                </div>
+                <div class="btn">
+                    <button>
+                        Save
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+    </footer>
+    <script src="/js/script.js"></script>
+    <script>
+        let contactId;
+        const searchParams = new URL(window.location).searchParams;
+        if (searchParams.has('id') && searchParams.get('id')) {
+            contactId = searchParams.get('id');
+            fetch(`/api/contacts/${contactId}`)
+                .then(async res => {
+                    const data = await res.json();
+                    if (res.status === 200) return data
+                    throw new Error(data['message'])
+                })
+                .then(data => {
+                    const { firstName, lastName, contact, birthday, description } = data;
+                    document.querySelector('#firstName').value = firstName;
+                    document.querySelector('#lastName').value = lastName;
+                    document.querySelector('#contact').value = contact;
+                    document.querySelector('#birthday').value = birthday;
+                    document.querySelector('#description').value = description;
+                })
+                .catch(err => { })
+
+        }
+        app.saveContact(contactId);
+    </script>
+</body>
+
+</html>
