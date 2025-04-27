@@ -1,6 +1,5 @@
 class App {
     constructor() {
-        this.baseURL = 'http://localhost:3000/';
         this.showCopyright();
         this.defaultHeaders = {
             'content-type': 'application/json'
@@ -13,7 +12,7 @@ class App {
     }
 
     getContacts = async () => {
-        const res = await fetch(`${this.baseURL}api/contacts/`);
+        const res = await fetch(`/api/contacts/`);
         const data = await res.json();
         if (data.length === 0) {
             document.querySelector('#contacts-page-body').innerHTML = `
@@ -69,7 +68,7 @@ class App {
     }
 
     getContact = async (contactId) => {
-        const res = await fetch(`${this.baseURL}api/contacts/${contactId}`);
+        const res = await fetch(`/api/contacts/${contactId}`);
         const data = await res.json();
         if (res.status === 200) {
             const { firstName, lastName, birthday, contact, description } = data;
