@@ -5,7 +5,7 @@ const contactsPageRoutes = require('./routes/contacts_pages_route')
 const logsRoutes = require('./routes/logs_route')
 
 const app = express();
-const PORT = 3000
+const PORT = 3001
 const API = '/api/'
 const middleware = new Middleware('contact_logs.txt')
 

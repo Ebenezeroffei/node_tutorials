@@ -190,3 +190,16 @@ url=/api/contacts/1745787491574;method=GET;date=4/27/2025, 8:58:29 PM
 url=/api/contacts/1745787491574/;method=DELETE;date=4/27/2025, 8:58:33 PM
 url=/contacts;method=GET;date=4/27/2025, 8:58:36 PM
 url=/api/contacts/;method=GET;date=4/27/2025, 8:58:36 PM
+url=/;method=GET;date=4/29/2025, 3:22:49 PM
+url=/favicon.ico;method=GET;date=4/29/2025, 3:22:49 PM
+url=/sw.js;method=GET;date=4/29/2025, 3:22:51 PM
+url=/sw.js;method=GET;date=4/29/2025, 3:23:21 PM
+url=/;method=GET;date=4/29/2025, 3:23:48 PM
+url=/sw.js;method=GET;date=4/29/2025, 3:23:51 PM
+url=/;method=GET;date=4/29/2025, 3:24:04 PM
+url=/sw.js;method=GET;date=4/29/2025, 3:24:07 PM
+url=/;method=GET;date=4/29/2025, 3:24:13 PM
+url=/sw.js;method=GET;date=4/29/2025, 3:24:15 PM
+url=/;method=GET;date=4/29/2025, 3:24:18 PM
+url=/sw.js;method=GET;date=4/29/2025, 3:24:21 PM
+url=/sw.js;method=GET;date=4/29/2025, 3:24:50 PM
