@@ -10,11 +10,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Install Node
-        uses: actions/setup-node@v4
+      - name: Connect to EC2
+        uses: appleboy/ssh-action@v1
         with:
-          node_version: 21.1.0
-      - name: Install Packages
-        run: npm install
+          host: ${{secrets.HOST}}
+          username: ${{secrets.USERNAME}}
+          key: ${{secrets.KEY}}
+          script: whoami
