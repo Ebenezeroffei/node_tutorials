@@ -3,9 +3,15 @@ const Middleware = require('./utils/middleware')
 const contactsApiRoutes = require('./routes/contacts_api_route')
 const contactsPageRoutes = require('./routes/contacts_pages_route')
 const logsRoutes = require('./routes/logs_route')
+const dotenv = require('dotenv')
 
+dotenv.config(
+    {
+        path: '.env.local'
+    }
+)
 const app = express();
-const PORT = 3001
+const PORT = process.env.PORT
 const API = '/api/'
 const middleware = new Middleware('contact_logs.txt')
 
